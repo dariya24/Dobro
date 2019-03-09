@@ -10,5 +10,14 @@ class Event:
 
 
     def toString(self):
-        return 'Разом із ' + self.name + ' зроби добру справу ' + self.work + \
-               '.\n Коли? \n '  + self.date + ' ' + self.time + '\n Де? \n' + self.place
+        message = ''
+        if self.name != '-':
+            message += '✅ Разом із ' + self.name
+        message += '\n✅ Що? ' + self.work.capitalize()
+        if self.date != '-':
+            message += '.\n✅ Коли? \n '  + self.date + ' '
+        if self.time != '-':
+            message += self.time
+        if self.place != '-':
+            message += '\n✅ Де? \n' + self.place
+        return  message
